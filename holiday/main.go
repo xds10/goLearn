@@ -1,17 +1,24 @@
-// holiday/main.go
-
 package main
 
-import (
-	"fmt"
-	"holiday/summer"
+import "fmt"
 
-	"github.com/q1mi/hello"
-)
+// 空接口
+
+// Any 不包含任何方法的空接口类型
+type Any interface{}
+
+// Dog 狗结构体
+type Dog struct{}
 
 func main() {
-	fmt.Println("现在是假期时间...")
-	hello.SayHi()
-	a := summer.Add(1, 2)
-	fmt.Println(a)
+	var x Any
+
+	x = "你好" // 字符串型
+	fmt.Printf("type:%T value:%v\n", x, x)
+	x = 100 // int型
+	fmt.Printf("type:%T value:%v\n", x, x)
+	x = true // 布尔型
+	fmt.Printf("type:%T value:%v\n", x, x)
+	x = Dog{} // 结构体类型
+	fmt.Printf("type:%T value:%v\n", x, x)
 }
